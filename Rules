@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+
+# A few helpful tips about the Rules file:
+#
+# * The order of rules is important: for each item, only the first matching
+#   rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. “/about/” for the file
+#   “content/about.html”). To select all children, grandchildren, … of an
+#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
+#   because “*” matches zero or more characters.
+
+compile '/css/*/' do
+  # do nothing
+end
+
+compile '/js/*/' do
+  # do nothing
+end
+
+compile '/*.txt' do
+  # do nothing
+end
+
+compile '*' do
+  filter :erb
+  layout 'boilerplate'
+end
+
+route '/css/*/' do
+  # /css/style/ → /css/style.css
+  # the extension attribute is set by the data source
+  item.identifier.chop + '.' + item[:extension]
+end
+
+route '/robots/' do '/robots.txt' end
+
+route '/js/*/' do
+  # /css/style/ → /css/style.css
+  # the extension attribute is set by the data source
+  item.identifier.chop + '.' + item[:extension]
+end
+
+route '*' do
+  item.identifier + 'index.html'
+end
+
+layout '*', :erb
