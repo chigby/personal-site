@@ -221,7 +221,7 @@ button {  width: auto; overflow: visible; }
 
 
  /* Primary Styles
-    Author:
+    Author: Cameron Higby-Naquin
  */
 
 h1 { font-size: 218%; }
@@ -229,12 +229,13 @@ h2 { font-size: 164%; }
 h3 { font-size: 145%; }
 h4 { font-size: 118%; }
 
-nav ul li { display: inline; }
-header h1, nav {float: left; margin: 10px; font-size:100%;}
+nav ul li { display: inline; margin-left:10px;}
+header h1, nav {float: left; margin:10px 0px; font-size:100%;}
 header, footer {margin: 0 auto; width: 600px;}
+footer { margin-top:10px;}
 #main {clear:both; width: 600px; margin:0 auto;}
 
-body { background: #fff url('../Armillary_sphere.png') no-repeat 400px 400px}
+/* body { background: #fff url('../Armillary_sphere.png') no-repeat 400px 400px} */
 
 
 

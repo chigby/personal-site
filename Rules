@@ -25,6 +25,7 @@ end
 
 compile '*' do
   filter :erb
+  filter :kramdown
   layout 'boilerplate'
 end
 
